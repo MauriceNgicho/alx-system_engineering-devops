@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -n $(ls -aF | grep -v '^\.$' | grep -v '^\.\.$' | LC_ALL=C sort -f | tr '\n' ',' | sed 's/,$/\n/')
