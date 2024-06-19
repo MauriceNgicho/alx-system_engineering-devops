@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -c "import os; print(int(os.getenv('BINARY'), 2))"
+echo $((2#$BINARY))
