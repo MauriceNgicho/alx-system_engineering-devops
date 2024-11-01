@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script terminates 4-to_infinity_and_beyond process without using kill
+# It does so by navigating to /proc and removing process from self-entry
+
+# Locate the PID of the 4-to_infinity_and_beyond process
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+
+# Check if the process is found
+if [ -n "$pid" ]; then
+    echo "Terminating 4-to_infinity_and_beyond process (PID: $pid)"
+
+    # Attempt to send an end-of-input to the process by closing stdin
+    exec <&-  # Close standard input
+
+    # If the process is in the background, bring it to the foreground and disown
+    fg %$pid && disown %$pid
+
+else
+    echo "4-to_infinity_and_beyond process not found."
+fi

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Script to display all currently running processes in a user-oriented format with hierarchy
+
+# Display the process list in user-oriented format with hierarchy
+# ps -eo to display user-oriented output, including all processes
+# pstree - provides the hierarchy, and -p includes PID
+# sort by user (UID) and PID
+
+echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
+ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --sort=user,pid | pstree -pu

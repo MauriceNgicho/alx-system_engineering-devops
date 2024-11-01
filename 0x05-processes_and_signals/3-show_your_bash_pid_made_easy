@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This is a bash script that displays PID, along with the process name
+
+# Loop through all directories in /proc that are numeric
+for pid in /proc/[0-9]*/; do
+    # Extract the process ID from the path
+    pid="${pid%/}"
+    pid="${pid##*/}"
+    
+    # Check if the process name contains "bash"
+    if grep -q "bash" "/proc/$pid/comm" 2>/dev/null; then
+        # Display the PID and process name
+        echo "$pid bash"
+    fi
+done
+
