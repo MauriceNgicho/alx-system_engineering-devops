@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Define a trap for the SIGTERM signal to display a custom message
+trap 'echo "I am invincible!!!"' SIGTERM
+
+# Infinite loop with a message every 2 seconds
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
