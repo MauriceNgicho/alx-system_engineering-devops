@@ -7,4 +7,4 @@
 # sort by user (UID) and PID
 
 echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --sort=user,pid | pstree -pu
+ps -eH -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
