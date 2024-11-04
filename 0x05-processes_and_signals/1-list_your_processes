@@ -6,5 +6,5 @@
 # pstree - provides the hierarchy, and -p includes PID
 # sort by user (UID) and PID
 
-echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
+echo "USER    PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
 ps -eH -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command
