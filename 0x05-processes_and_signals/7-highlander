@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# This script describes a file that displays "I'm invincible"
+# When it recieves a "SIGTERM" signal
 
 # Define a trap for the SIGTERM signal to display a custom message
 trap 'echo "I am invincible!!!"' SIGTERM
