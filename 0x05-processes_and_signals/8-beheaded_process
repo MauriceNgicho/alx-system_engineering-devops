@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-# A script that kills process "7-higlander"
-# Find the PID of the 7-highlander process
-pid=$(pgrep -f "7-highlander")
+# A script that forcibly kills process "7-higlander" bypassing any SIGTERM handling
 
-# Check if the process was found
-if [ -n "$pid" ]; then
-    # Use `echo` to write directly to /proc to send a non-trappable kill signal
-    echo -n > "/proc/$pid/fd/0" 2>/dev/null || sudo kill -9 "$pid"
+
+# Get the PID of the 7-highlander process
+PID=$(pgrep -f 7-highlander)
+
+# Check if the process was found, and kill it with SIGKILL
+if [ -n "$PID" ]; then
+    kill -9 "$PID"
+    echo "7-highlander process has been killed."
 else
     echo "7-highlander process not found."
 fi

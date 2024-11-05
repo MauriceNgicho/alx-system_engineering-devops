@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script prints "I am alive!" and waits for instructions from another file
+
+# Infinite loop to write "I am alive!" to /tmp/my_process
+while true; do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+done
