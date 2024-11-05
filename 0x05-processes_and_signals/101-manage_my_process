@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script manages the process
 
 # File paths
 PID_FILE="/var/run/my_process.pid"
