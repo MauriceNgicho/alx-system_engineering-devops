@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Check if script is run with root privileges
+if [[ $EUID -ne 0 ]]; then
+   echo "Please run this script as root or use sudo."
+   exit 1
+fi
+
+# Display listening internet and UNIX domain sockets with PID/program name
+echo "Active Internet connections (only servers)"
+ss -tulnp
+
+echo
+echo "Active UNIX domain sockets."
+ss -xlnp
