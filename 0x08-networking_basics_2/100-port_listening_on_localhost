@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This is a bash script that listens on port 98 on localhost.
+
+
+if [ "$EUID" -ne 0 ]; then
+	echo "Please run as root"
+	exit 1
+fi
+
+# Listen on localhost (127.0.0.1) on port 98 and output received messages
+nc -l -p 98
