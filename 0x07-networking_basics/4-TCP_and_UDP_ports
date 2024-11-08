@@ -13,4 +13,4 @@ ss -tulnp
 
 echo
 echo "Active UNIX domain sockets."
-ss -xlnp
+ss -xlp
