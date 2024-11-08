@@ -8,7 +8,7 @@ if [ "$EUID" -ne 0 ]; then
 
 fi
 
-# Back up the current etc/host file
+# Back up the current etc/hosts file
 cp /etc/hosts /etc/hosts.old
 
 # Update /etc/host with the new entries
