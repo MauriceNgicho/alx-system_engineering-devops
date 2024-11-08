@@ -8,9 +8,4 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Display listening internet and UNIX domain sockets with PID/program name
-echo "Active Internet connections (only servers)"
-ss -tulnp
-
-echo
-echo "Active UNIX domain sockets."
-ss -xlp
+netstat -tulnp
