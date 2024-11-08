@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This is a bash script that displays listening ports
 
 # Check if script is run with root privileges
 if [[ $EUID -ne 0 ]]; then
