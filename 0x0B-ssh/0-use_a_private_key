@@ -1,4 +1,4 @@
 #!/bin/bash
-# Use ssh with the private key  to connect as the user.
+# A bassh script that use ssh with the private key ~/.ssh/school to connect as the user 'ubuntu'
 
-ssh -i ~/.ssh/school ubuntu@8.8.8.8
+ssh -i ~/.ssh/school ubuntu@18.234.80.62
