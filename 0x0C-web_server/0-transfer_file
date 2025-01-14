@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# script to transfer file to a remote server
+
+# check the number of arguments provided
+if [ "$#" -ne 4 ]; then
+	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+	exit 1
+fi
+
+# Assign arguments to variables
+PATH_TO_FILE="$1"
+IP="$2"
+USERNAME="$3"
+PATH_TO_SSH_KEY="$4"
+
+
+# Check if file to transfer exists
+if [ ! -f "PATH_TO_FILE" ]; then
+	echo "Error: File '$PATH_TO_FILE' does not exist."
+	exit 1
+fi
+
+# Use scp to transfer the file and check if transfer is successful
+if scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME@$IP:~/"; then
+	echo "File '$PATH_TO_FILE' successfully transferred to $USERNAME@$IP:~/"
+else
+	echo "Error: Failed to transfer file '$PATH_TO_FILE'."
+	exit 1
+fi
