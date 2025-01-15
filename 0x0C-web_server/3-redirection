@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Script to install and configure Nginx to serve "Hello World!
+
+# Update and install nginx
+sudo apt-get update
+sudo apt-get install nginx -y
+sudo ufw allow 'nginx HTTP'
+
+# Create the html page
+sh -c 'echo "Hello World!" > /var/www/html/index.html'
+
+# Redirecting
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://https://www.youtube.com/watch?v=EDAjqGcayKs permanent;' /etc/nginx/sites-available/default
+
+# Restart nginx
+service nginx restart
