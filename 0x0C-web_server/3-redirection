@@ -10,7 +10,8 @@ sudo ufw allow 'nginx HTTP'
 sh -c 'echo "Hello World!" > /var/www/html/index.html'
 
 # Redirecting
-sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://https://www.youtube.com/watch?v=EDAjqGcayKs permanent;' /etc/nginx/sites-available/default
+NGINX_CONFIG="/etc/nginx/sites-available/default"
+sudo sed -i '/server {/a \\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=EDAjqGcayKs;\n\t}' "$NGINX_CONFIG"
 
 # Restart nginx
 service nginx restart
