@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-
-# Install nginx
-# Configure /redirect_me as a 301 moved permanently
-# Include a 404 page 
+"""
+Install nginx
+Configure /redirect_me as a 301 moved permanently
+Include a 404 page 
+"""
 
 apt-get update
 apt-get install nginx
