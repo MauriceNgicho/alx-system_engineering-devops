@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+"""
+A bash script to set nginx to port 80
+"""
+ln -sf /etc/nginx/sites-avilable/default /ect/nginx/sites-enabled/default
+sudo service nginx restart
