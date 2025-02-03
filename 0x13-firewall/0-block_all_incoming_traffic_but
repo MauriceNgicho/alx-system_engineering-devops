@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Install ufw firewall and set up some rules
+sudo apt install -y ufw
+sudo ufw default all outgoing
+sudo ufw default deny incoming
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
+
+echo "y" | sudo ufw enable
