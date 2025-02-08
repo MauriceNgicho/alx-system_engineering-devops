@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# A Bash script that installs nginx, configure /redirect_me
+# as a 301 moved permanently and include a 404 page.
+
+
 """
 Install nginx
 Configure /redirect_me as a 301 moved permanently
