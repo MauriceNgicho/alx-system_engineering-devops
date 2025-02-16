@@ -29,7 +29,7 @@ def export_to_csv(emplotee_id):
 
     file_name = f"{employee_id}.csv"
     with open(file_name, mode="w", newline="") as csv_file:
-        writer = csv.writer(csv_file)
+        writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
         for task in todos_data:
             writer.writerow([
                 employee_id,
