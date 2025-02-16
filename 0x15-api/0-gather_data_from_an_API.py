@@ -17,7 +17,7 @@ def fetch_employee_data(employee_id):
         print("user not found")
         sys.exit(1)
     user_data = user_response.json()
-    user_name = user_data.get("name")
+    user_name = user_data.get("name").strip()
 
     # Fetch todo data
     todos_response = requests.get(todo_url)
