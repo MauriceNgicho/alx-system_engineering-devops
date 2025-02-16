@@ -4,10 +4,12 @@
 import requests
 import sys
 
+
 def fetch_employee_data(employee_id):
     # Get URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todo_url = ("https://jsonplaceholder.typicode.com/todos?"
+                f"userId={employee_id}")
 
     # Fetch user data
     user_response = requests.get(user_url)
@@ -31,10 +33,10 @@ def fetch_employee_data(employee_id):
             completed.append(todo.get("title"))
 
     # Print the output
-    print(f"Employee {user_name} is done with task({len(completed)}/{total_task}):")
+    print(f"Employee {user_name} is done with "
+          f"task({len(completed)}/{total_task}): ")
     for complete in completed:
         print(f"\t {complete}")
-
 
 
 if __name__ == "__main__":
