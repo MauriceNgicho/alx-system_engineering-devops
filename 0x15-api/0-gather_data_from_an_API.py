@@ -34,7 +34,7 @@ def fetch_employee_data(employee_id):
 
     # Print the output
     print(f"Employee {user_name} is done with "
-          f"task({len(completed)}/{total_task}): ")
+          f"tasks({len(completed)}/{total_task}): ")
     for complete in completed:
         print(f"\t {complete}")
 
